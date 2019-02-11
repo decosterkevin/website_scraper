@@ -61,10 +61,10 @@ def extract_table(url, classes=None, ids=None):
                 for tmp_li in tmp_ul.findAll('li'):
                     if 'item-date' in tmp_li.get('class'):
                         try:
-                            tmp_result['date']= datetime.strptime(trim(tmp_li.text), '%d.%m.%Y')
+                            tmp_result['date']= datetime.strptime(str(trim(tmp_li.text)), '%d.%m.%Y')
                             results.append(tmp_result)
                         except TypeError as error:
-                            print(tmp_li.text)
+                            print('error' + tmp_li.text)
     return sorted(results, key=lambda k: k['date'])
     
                 
@@ -97,15 +97,15 @@ def process_list(latest_results):
     pickle.dump(latest_results, open(FILE_PATH, 'wb'))
 
 
-# url_ = 'https://www.anibis.ch/fr/immobilier-immobilier-locations-gen%c3%a8ve--418/advertlist.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1'
-# list_ = extract_table(url_, classes='listing-list')
-# process_list(list_)
+url_ = 'https://www.anibis.ch/fr/immobilier-immobilier-locations-gen%c3%a8ve--418/advertlist.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1'
+list_ = extract_table(url_, classes='listing-list')
+process_list(list_)
 
-# str_list = '\n'.join([config.ROOT_URL + offer['href'] for offer in list_])
-# msg = """\
+str_list = '\n'.join([config.ROOT_URL + offer['href'] for offer in list_])
+msg = """\
 
-#     You have new offers for {0}:
+    You have new offers for {0}:
 
-#     {1}
-# """
-# send_email("kevin@decoster.io", "decoster.kevin@outlook.com", msg.format(config.ROOT_URL,str_list))
+    {1}
+"""
+send_email("kevin@decoster.io", "decoster.kevin@outlook.com", msg.format(config.ROOT_URL,str_list))
