@@ -13,14 +13,14 @@ sS'href'
 p7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/au-coeur-de-plainpalais-parking--16739790.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
 p8
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl13_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl13_divPrice
 p9
-S'CHF 260.\xe2\x80\x93'
+VCHF 260.
 p10
 sa(dp11
-S'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl12_divPrice'
+Vctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl12_divPrice
 p12
-S'CHF 260.\xe2\x80\x93'
+VCHF 260.
 p13
 sg2
 g3
@@ -38,9 +38,9 @@ g3
 p19
 tp20
 Rp21
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl11_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl11_divPrice
 p22
-S'CHF 300.\xe2\x80\x93'
+VCHF 300.
 p23
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/parking-int%c3%a9rieur-au-centre-ville--25323537.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
@@ -52,9 +52,9 @@ g3
 p26
 tp27
 Rp28
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl10_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl10_divPrice
 p29
-S'CHF 70.\xe2\x80\x93'
+VCHF 70.
 p30
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/parking-moto--25353444.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
@@ -69,9 +69,9 @@ Rp35
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/box-ferme-garage-ferm%c3%a9-proche-h%c3%b4pital--26490465.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
 p36
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl09_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl09_divPrice
 p37
-S'CHF 250.\xe2\x80\x93'
+VCHF 250.
 p38
 sa(dp39
 g2
@@ -80,9 +80,9 @@ g3
 p40
 tp41
 Rp42
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl08_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl08_divPrice
 p43
-S'Prix sur demande'
+VPrix sur demande
 p44
 sg7
 S"/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/places-de-parking-%c3%a0-boulevard-du-pont-d'arve--27169358.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418"
@@ -94,9 +94,9 @@ g3
 p47
 tp48
 Rp49
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl07_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl07_divPrice
 p50
-S'CHF 300.\xe2\x80\x93'
+VCHF 300.
 p51
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/place-de-parking-int%c3%a9rieure-1205--27304664.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
@@ -108,17 +108,17 @@ g3
 p54
 tp55
 Rp56
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl06_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl06_divPrice
 p57
-S'CHF 200.\xe2\x80\x93'
+VCHF 200.
 p58
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/place-de-parking-couverte--27424594.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
 p59
 sa(dp60
-S'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl05_divPrice'
+Vctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl05_divPrice
 p61
-S'CHF 120.\xe2\x80\x93'
+VCHF 120.
 p62
 sg2
 g3
@@ -139,9 +139,9 @@ Rp70
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/location-place-de-parking--27522229.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
 p71
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl04_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl04_divPrice
 p72
-S'CHF 200.\xe2\x80\x93'
+VCHF 200.
 p73
 sa(dp74
 g2
@@ -153,9 +153,9 @@ Rp77
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/place-de-parking-couverte-garage-proche-hug-urgent--27603880.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
 p78
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl03_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl03_divPrice
 p79
-S'CHF 300.\xe2\x80\x93'
+VCHF 300.
 p80
 sa(dp81
 g2
@@ -167,9 +167,9 @@ Rp84
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/place-de-parking--27703032.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
 p85
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl02_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl02_divPrice
 p86
-S'CHF 280.\xe2\x80\x93'
+VCHF 280.
 p87
 sa(dp88
 g2
@@ -181,9 +181,9 @@ Rp91
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/rue-de-l%60aubepine-24-1205-geneve-150chf--27783146.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
 p92
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl00_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl00_divPrice
 p93
-S'CHF 150.\xe2\x80\x93'
+VCHF 150.
 p94
 sa(dp95
 g2
@@ -195,8 +195,8 @@ Rp98
 sg7
 S'/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/votre-prochaine-place-de-parking-au-centre-ville--27769060.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1&view=2&fcid=418'
 p99
-sS'ctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl01_divPrice'
+sVctl00_phlContent_ResList_ctlDetail_ctlAdvertList_ctl01_divPrice
 p100
-S'CHF 250.\xe2\x80\x93'
+VCHF 250.
 p101
 sa.
