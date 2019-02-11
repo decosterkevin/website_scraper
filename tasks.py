@@ -4,6 +4,7 @@ import traceback
 import pickle
 import time
 from sys import stdout
+from lib import extract_table, process_list
 
 config = Config()
 
