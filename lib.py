@@ -60,8 +60,11 @@ def extract_table(url, classes=None, ids=None):
             for tmp_ul in li.findAll('ul'):
                 for tmp_li in tmp_ul.findAll('li'):
                     if 'item-date' in tmp_li.get('class'):
-                        tmp_result['date']= datetime.strptime(trim(tmp_li.text), '%d.%m.%Y')
-                        results.append(tmp_result)
+                        try:
+                            tmp_result['date']= datetime.strptime(trim(tmp_li.text), '%d.%m.%Y')
+                            results.append(tmp_result)
+                        except TypeError as error:
+                            print(tmp_li.text)
     return sorted(results, key=lambda k: k['date'])
     
                 
