@@ -11,7 +11,7 @@ config = Config()
 FILE_NAME_PKL= 'backup.pkl'
 
 def trim(text):
-    trimmed = text.replace(' ', '').replace('\n', '').replace('\r', '').replace('\t', '').replace('\u', '')
+    # trimmed = text.replace(' ', '').replace('\n', '').replace('\r', '').replace('\t', '').replace('\u', '')
     return text.encode('utf-8').strip()
 
 
