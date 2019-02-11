@@ -83,7 +83,7 @@ def process_list(latest_results):
                 break
         if len(new_offers)> 0:
             print("new offers find, sending email...")
-            str_list = '\n'.join([config.ROOT_URL + offer['href'] for offer in list_])
+            str_list = '\n'.join([config.ROOT_URL + offer['href'] for offer in new_offers])
             msg = """\
 
                 You have new offers for {0}:
