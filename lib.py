@@ -39,7 +39,7 @@ def extract_table(url, classes=None, ids=None):
             for div in li.find_all("div"):
                 a = div.find('a')
                 if a:
-                    tmp_result['href']=a.get('href').encode('utf-8').strip()
+                    tmp_result['href']=trim(a.get('href'))
                 ids = div.get('id')
                 classes = div.get('class')
                 text = trim(div.text)
