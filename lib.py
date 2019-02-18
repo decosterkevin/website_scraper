@@ -8,8 +8,6 @@ from send_email import send_email
 
 config = Config()
 
-FILE_NAME_PKL= 'backup.pkl'
-
 def trim(text):
     # trimmed = text.replace(' ', '').replace('\n', '').replace('\r', '').replace('\t', '').replace('\u', '')
     return text.encode('utf-8').decode('ascii', 'ignore').strip()
@@ -17,6 +15,8 @@ def trim(text):
 
 def extract_table(url, classes=None, ids=None):
     print("extracting list of offers...")
+
+    
     req = requests.get(url)
     soup = BeautifulSoup(req.text, 'html.parser')
     filtering= {}
@@ -69,32 +69,32 @@ def extract_table(url, classes=None, ids=None):
     
                 
 
-def process_list(latest_results):
-    FILE_PATH = config.PERSITANT_STORAGE + FILE_NAME_PKL
-    if os.path.isfile(FILE_PATH):
-        old_results = pickle.load(open(FILE_PATH, 'rb'))
+def process_list(latest_results, old_results=None):
+    new_offers = []
+    if old_results:
         old_hrefs = [tmp['href'] for tmp in old_results]
         old_dates = [tmp['date'] for tmp in old_results]
-        new_offers = []
+        
         for offer in latest_results:
             if offer['href'] not in old_hrefs:
                 new_offers.append(offer)
             else:
                 break
-        if len(new_offers)> 0:
-            print("new offers find, sending email...")
-            str_list = '\n'.join([config.ROOT_URL + offer['href'] for offer in new_offers])
-            msg = """\
+    return new_offers
 
-                You have new offers for {0}:
+def send_mail(new_offers):
+    if len(new_offers)> 0:
+        print("new offers find, sending email...")
+        str_list = '\n'.join([config.ROOT_URL + offer['href'] for offer in new_offers])
+        msg = """\
 
-                {1}
-            """
-            send_email("kevin@decoster.io", "decoster.kevin@outlook.com", msg)
-        else:
-            print("no new offers, closing...")
-        
-    pickle.dump(latest_results, open(FILE_PATH, 'wb'))
+            You have new offers for {0}:
+
+            {1}
+        """
+        send_email("kevin@decoster.io", "decoster.kevin@outlook.com", msg)
+    else:
+        print("no new offers, closing...")
 
 
 # url_ = 'https://www.anibis.ch/fr/immobilier-immobilier-locations-gen%c3%a8ve--418/advertlist.aspx?loc=1205+gen%c3%a8ve&aidl=868,15222&dlf=1'

@@ -11,6 +11,7 @@ requests = "*"
 python-decouple = "*"
 celery = "*"
 redis = "*"
+mongoengine = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"
