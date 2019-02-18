@@ -65,7 +65,7 @@ def extract_table(url, classes=None, ids=None):
                             results.append(tmp_result)
                         except TypeError as error:
                             print('error' + tmp_li.text)
-    return sorted(results, key=lambda k: k['date'])
+    return sorted(results,reverse=True, key=lambda k: k['date'])
     
                 
 
