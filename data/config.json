@@ -1,6 +1,10 @@
 {
     "1": {
-        "url": "https://www.anibis.ch/fr/immobilier-immobilier-locations-gen%c3%a8ve--418/advertlist.aspx?loc=versoix&sdc=10&aral=834__3000,851_50_,865_2.5_&aidl=15222&dlf=1",
-        "filters": ["rez", "maison"]
+        "url": "https://www.anibis.ch/fr/immobilier-immobilier-locations-gen%c3%a8ve--418/advertlist.aspx?loc=versoix&sdc=10&aral=834__3000,851_50_,865_2.5_&aidl=866,15222&dlf=1",
+        "filters": ["rez", "maison", "jardin", "rez-de-chaussée"]
+    },
+    "2": {
+        "url": "https://www.anibis.ch/fr/immobilier-immobilier-locations-gen%c3%a8ve--418/advertlist.aspx?loc=versoix&sdc=10&aral=834__3000,851_50_,865_2.5_&aidl=867,15222&dlf=1",
+        "filters": []
     }
 }

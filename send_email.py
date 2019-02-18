@@ -3,10 +3,10 @@ from config import Config
 config = Config()
 
 
-def send_email(sender_email, receiver_email, text):
+def send_email(sender_email, receiver_email, subject, text):
     # Try to log in to server and send email
     try:
-        header = 'To:' + receiver_email + '\n' + 'From: ' + config.EMAIL_USERNAME + '\n' + 'Subject:Anibis monitoring \n'
+        header = 'To:' + receiver_email + '\n' + 'From: ' + config.EMAIL_USERNAME + '\n' + 'Subject:' + subject + '\n'
         server = smtplib.SMTP(config.EMAIL_HOST,config.EMAIL_PORT)
         print(text)
         server.ehlo() # Can be omitted

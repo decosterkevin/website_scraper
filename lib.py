@@ -92,7 +92,8 @@ def send_mail(new_offers):
 
             {1}
         """
-        send_email("kevin@decoster.io", "decoster.kevin@outlook.com", msg)
+        subject = "Anibis monitoring"
+        send_email("kevin@decoster.io" , "decoster.kevin@outlook.com",subject, msg.format(subject, str_list))
     else:
         print("no new offers, closing...")
 
