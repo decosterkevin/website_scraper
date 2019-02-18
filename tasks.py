@@ -73,5 +73,3 @@ def monitor():
         with open(BACKUP_JSON_FILE, 'w') as file:
             file.write(jres)
         print('finished.')
-
-monitor()
