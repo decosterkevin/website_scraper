@@ -146,7 +146,7 @@ def create_email(new_offers):
                 <p>You have new offers for {0} in {1}:</p>
                 <p>Here is list:</p>
                 <ul>
-                {1}
+                {2}
                 </ul>
                 </p>
             </body>
