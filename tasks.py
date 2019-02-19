@@ -74,4 +74,3 @@ def monitor():
             file.write(jres)
         print('finished.')
 
-monitor()
