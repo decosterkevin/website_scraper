@@ -9,4 +9,4 @@ class Config(object):
     REDIS_URL = config("REDIS_URL")
     PERSITANT_STORAGE = config("PERSITANT_STORAGE", default="data/")
     ROOT_URL = config("ROOT_URL", default="https://www.anibis.ch")
-    
+    HOST = config("HOST")

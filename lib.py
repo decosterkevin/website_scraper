@@ -134,12 +134,12 @@ def create_email(new_offers):
         
         str_list = '\n'.join([ config.ROOT_URL + offer['href'] for offer in new_offers])
         str_list_html = ''.join(['<li><a href="' + config.ROOT_URL + offer['href'] + '">' +  config.ROOT_URL + offer['href'] + '</a></li>' for offer in new_offers])
-        msg = "You have new offers for {0}: \n {1}"
+        msg = "You have new offers for {0} in {1}: \n {2}"
         html = """\
             <html>
             <head></head>
             <body>
-                <p>You have new offers for {0}:</p>
+                <p>You have new offers for {0} in {1}:</p>
                 <p>Here is list:</p>
                 <ul>
                 {1}
@@ -149,7 +149,7 @@ def create_email(new_offers):
             </html>
         """
         subject = "Anibis monitoring"
-        send_email("kevin@decoster.io" , "decoster.kevin@outlook.com", subject, msg.format(subject, str_list), html.format(subject, str_list_html))
+        send_email("kevin@decoster.io" , "decoster.kevin@outlook.com", subject, msg.format(subject, config.HOST, str_list), html.format(subject,config.HOST, str_list_html))
     else:
         print("no new offers, closing...")
 
