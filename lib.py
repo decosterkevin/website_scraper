@@ -120,7 +120,11 @@ def process_list(latest_results, old_results=None):
 
     new_offers = []
     if old_results:
-        old_ids = [tmp['id'] for tmp in old_results]
+        old_ids = []
+        for tmp in old_results:
+            if not tmp.get("id", None):
+                print(tmp.get("href", None))
+            old_ids.append(tmp.get("id", None))
         old_dates = [tmp['date'] for tmp in old_results]
         
         for offer in latest_results:
