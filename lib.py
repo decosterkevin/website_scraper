@@ -24,9 +24,31 @@ def remove_url_parameters(href):
     return href[:index_1 + 5]
 
 def extract_table(url, classes=None, ids=None):
-    print("extracting list of offers...")
+    """ HTML extractor
 
+    Look for list tag <ul> given a list of classes and ids
     
+    Parameters
+    ----------
+    url : str
+        URL to scrap
+    classes : list, optional
+        a list of classes (the default is None, which don't filter by class)
+    ids : list, optional
+        a list of ids (the default is None, which don't filter by ids)
+    
+    Raises
+    ------
+    ValueError
+        ListNotFound if not <ul> tag are present on the webpage
+    
+    Returns
+    -------
+    list
+        A list of dictionary element contening all list elements
+    """
+
+    print("extracting list of offers...")
     req = requests.get(url)
     soup = BeautifulSoup(req.text, 'html.parser')
     filtering= {}
@@ -81,6 +103,21 @@ def extract_table(url, classes=None, ids=None):
                 
 
 def process_list(latest_results, old_results=None):
+    """ Find update in the most recent list 
+    
+    Parameters
+    ----------
+    latest_results : list
+        the newest list results
+    old_results : list, optional
+        the backup results to be compared with (the default is None, which means no backup results are available)
+    
+    Returns
+    -------
+    list
+        A list of new offers
+    """
+
     new_offers = []
     if old_results:
         old_ids = [tmp['id'] for tmp in old_results]
@@ -91,7 +128,7 @@ def process_list(latest_results, old_results=None):
                 new_offers.append(offer)
     return new_offers
 
-def send_mail(new_offers):
+def create_email(new_offers):
     if len(new_offers)> 0:
         print("new offers find, sending email...")
         

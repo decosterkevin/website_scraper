@@ -5,7 +5,7 @@ import pickle
 import time
 from sys import stdout
 from collections import defaultdict
-from lib import extract_table, process_list, send_mail
+from lib import extract_table, process_list, create_email
 import json
 import os.path
 from bson import json_util
@@ -18,7 +18,7 @@ app.conf.timezone = 'Europe/Paris'
 
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
-    # Executes every Monday morning at 7:30 a.m.
+    # Executes every 600 seconds.
     sender.add_periodic_task(600,
         monitor.s()
     )
@@ -67,7 +67,7 @@ def monitor():
         print('all urls processed, ending...')
         if len(new_offers) > 0:
             print(f'{len(new_offers)} founds, sending email...')
-            send_mail(new_offers)
+            create_email(new_offers)
         print('dumping latest results...')
         jres = json.dumps(results, default=str)
         with open(BACKUP_JSON_FILE, 'w') as file:
