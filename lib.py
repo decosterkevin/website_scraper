@@ -12,6 +12,16 @@ def trim(text):
     # trimmed = text.replace(' ', '').replace('\n', '').replace('\r', '').replace('\t', '').replace('\u', '')
     return text.encode('utf-8').decode('ascii', 'ignore').strip()
 
+def extract_id(href):
+    index_1 = href.index(".aspx")
+    substring = href[index_1-12:index_1]
+    index_0 = substring.index("--")
+    sub_refined = substring[index_0 + 2:]
+    return sub_refined
+
+def remove_url_parameters(href):
+    index_1 = href.index(".aspx")
+    return href[:index_1 + 5]
 
 def extract_table(url, classes=None, ids=None):
     print("extracting list of offers...")
@@ -39,7 +49,8 @@ def extract_table(url, classes=None, ids=None):
             for div in li.find_all("div"):
                 a = div.find('a')
                 if a:
-                    tmp_result['href']=trim(a.get('href'))
+                    tmp_result['href']=remove_url_parameters(trim(a.get('href')))
+                    tmp_result['id']= extract_id(tmp_result['href'])
                 ids = div.get('id')
                 classes = div.get('class')
                 text = trim(div.text)
@@ -72,28 +83,36 @@ def extract_table(url, classes=None, ids=None):
 def process_list(latest_results, old_results=None):
     new_offers = []
     if old_results:
-        old_hrefs = [tmp['href'] for tmp in old_results]
+        old_ids = [tmp['id'] for tmp in old_results]
         old_dates = [tmp['date'] for tmp in old_results]
         
         for offer in latest_results:
-            if offer['href'] not in old_hrefs:
+            if offer['id'] not in old_ids:
                 new_offers.append(offer)
-            else:
-                break
     return new_offers
 
 def send_mail(new_offers):
     if len(new_offers)> 0:
         print("new offers find, sending email...")
-        str_list = '\n'.join([config.ROOT_URL + offer['href'] for offer in new_offers])
-        msg = """\
-
-            You have new offers for {0}:
-
-            {1}
+        
+        str_list = '\n'.join([ config.ROOT_URL + offer['href'] for offer in new_offers])
+        str_list_html = ''.join(['<li><a href="' + config.ROOT_URL + offer['href'] + '">' +  config.ROOT_URL + offer['href'] + '</a></li>' for offer in new_offers])
+        msg = "You have new offers for {0}: \n {1}"
+        html = """\
+            <html>
+            <head></head>
+            <body>
+                <p>You have new offers for {0}:</p>
+                <p>Here is list:</p>
+                <ul>
+                {1}
+                </ul>
+                </p>
+            </body>
+            </html>
         """
         subject = "Anibis monitoring"
-        send_email("kevin@decoster.io" , "decoster.kevin@outlook.com",subject, msg.format(subject, str_list))
+        send_email("kevin@decoster.io" , "decoster.kevin@outlook.com", subject, msg.format(subject, str_list), html.format(subject, str_list_html))
     else:
         print("no new offers, closing...")
 
@@ -110,3 +129,7 @@ def send_mail(new_offers):
 #     {1}
 # """
 # send_email("kevin@decoster.io", "decoster.kevin@outlook.com", msg.format(config.ROOT_URL,str_list))
+
+# x="/fr/d-immobilier-immobilier-locations-gen%c3%a8ve--418/appartement-dans-une-maison-%c3%a0-ferney-voltaire,-chemin%c3%a9e--27495936.aspx?fts=maison&loc=versoix&sdc=10&aral=834__3000,851_50_,865_2.5_&aidl=866,15222&dlf=1&view=2&fcid=418&abcate=1"
+# # send_mail([{'href': x}])
+# print(remove_url_parameters(x))
