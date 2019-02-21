@@ -121,6 +121,7 @@ def process_list(latest_results, old_results=None):
     new_offers = []
     if old_results:
         old_ids = []
+        new_ids = []
         for tmp in old_results:
             if not tmp.get("id", None):
                 print(tmp.get("href", None))
@@ -128,8 +129,9 @@ def process_list(latest_results, old_results=None):
         old_dates = [tmp['date'] for tmp in old_results]
         
         for offer in latest_results:
-            if offer['id'] not in old_ids:
+            if offer['id'] not in old_ids and offer['id'] not in new_ids:
                 new_offers.append(offer)
+                new_ids.append(offer['id'])
     return new_offers
 
 def create_email(new_offers):
