@@ -118,20 +118,18 @@ def process_list(latest_results, old_results=None):
         A list of new offers
     """
 
-    new_offers = []
+    new_offers = {}
+    new_ids = {}
     if old_results:
-        old_ids = []
-        new_ids = []
-        for tmp in old_results:
-            if not tmp.get("id", None):
-                print(tmp.get("href", None))
-            old_ids.append(tmp.get("id", None))
-        old_dates = [tmp['date'] for tmp in old_results]
-        
         for offer in latest_results:
-            if offer['id'] not in old_ids and offer['id'] not in new_ids:
+            if offer['id'] not in old_results:
                 new_offers.append(offer)
-                new_ids.append(offer['id'])
+                new_ids.add(offer['id'])
+    
+    print('dumping latest results...')
+    jres = json.dumps(new_ids, default=str)
+    with open(config.BACKUP_JSON_FILE, 'w') as file:
+        file.write(jres)
     return new_offers
 
 def create_email(new_offers):

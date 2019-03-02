@@ -10,3 +10,5 @@ class Config(object):
     PERSITANT_STORAGE = config("PERSITANT_STORAGE", default="data/")
     ROOT_URL = config("ROOT_URL", default="https://www.anibis.ch")
     HOST = config("HOST")
+    
+    BACKUP_JSON_FILE = PERSITANT_STORAGE + 'backup.json'
